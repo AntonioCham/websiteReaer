@@ -9,11 +9,11 @@ function docReady(fn) {
 } 
 
 docReady(function() {
-    var resultContainer = document.getElementById('result');
+    var resultContainer = document.getElementById('qr-reader-results');
     var lastResult, countResults = 0;
     
     var html5QrcodeScanner = new Html5QrcodeScanner(
-        "reader", { fps: 10, qrbox: 250 });
+        "qr-reader", { fps: 10, qrbox: 250 });
     
     function onScanSuccess(qrCodeMessage) {
         if (qrCodeMessage !== lastResult) {
@@ -28,7 +28,8 @@ docReady(function() {
     
     // Optional callback for error, can be ignored.
     function onScanError(qrCodeError) {
-        console.log(qrCodeError)
+        // This callback would be called in case of qr code scan error or setup error.
+        // You can avoid this callback completely, as it can be very verbose in nature.
     }
     
     html5QrcodeScanner.render(onScanSuccess, onScanError);
