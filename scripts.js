@@ -28,8 +28,7 @@ docReady(function() {
     
     // Optional callback for error, can be ignored.
     function onScanError(qrCodeError) {
-        // This callback would be called in case of qr code scan error or setup error.
-        // You can avoid this callback completely, as it can be very verbose in nature.
+        console.log(qrCodeError)
     }
     
     html5QrcodeScanner.render(onScanSuccess, onScanError);
