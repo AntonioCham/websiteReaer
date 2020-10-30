@@ -18,7 +18,7 @@ var html5QrcodeScanner = new Html5QrcodeScanner(
 function onScanSuccess(qrCodeMessage){
     if (qrCodeMessage !== lastResult) {
         ++countResults;
-        lastResult = qrCodeMessage;
+        result = qrCodeMessage;
         resultContainer.innerHTML += `<div>[${countResults}] - ${qrCodeMessage}</div>`;
         
         // Optional: To close the QR code scannign after the result is found
